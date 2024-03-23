@@ -12,3 +12,8 @@ TEAM MEMBERS
    2022HS70051
    2022hs70051@wilp.bits-pilani.ac.in
    abhiShake77
+
+3. Shubham Kumar Singh
+   2022HS70025
+   2022hs70025@wilp.bits-pilani.ac.in
+   Shubhamctrl2
