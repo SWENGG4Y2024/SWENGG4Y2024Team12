@@ -11,7 +11,6 @@
 7. [Requirement Validations](#7-requirement-validations)
 8. [Practical Considerations](#8-practical-considerations)
 9. [Non-Functional Requirements (NFRs)](#9-non-functional-requirements-nfrs)
-10. [Appendices](#10-appendices)
 
 ## 1. Introduction
 
