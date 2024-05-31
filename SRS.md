@@ -15,10 +15,6 @@ The PFMS is designed to help users manage their personal finances. It allows use
 - **API**: Application Programming Interface
 - **UI**: User Interface
 
-### 1.4 References
-- [GitHub Repository](https://github.com/hardikSinghBehl/personal-finance-management-system)
-- Swagger-UI for API documentation
-
 ## 2. Overall Description
 
 ### 2.1 Product Perspective
