@@ -1,126 +1,141 @@
-# Software Requirements Specification (SRS) for Personal Finance Management System
-
-## Table of Contents
-
-1. [Introduction](#1-introduction)
-2. [Software Fundamentals](#2-software-fundamentals)
-3. [Requirements Process](#3-requirements-process)
-4. [Requirement Elicitation](#4-requirement-elicitation)
-5. [Requirement Analysis](#5-requirement-analysis)
-6. [Requirement Specifications](#6-requirement-specifications)
-7. [Requirement Validations](#7-requirement-validations)
-8. [Practical Considerations](#8-practical-considerations)
-9. [Non-Functional Requirements (NFRs)](#9-non-functional-requirements-nfrs)
+# Software Requirements Specification (SRS)
 
 ## 1. Introduction
 
-The Software Requirements Specification (SRS) document outlines the functional and non-functional requirements for the Personal Finance Management System. It serves as a blueprint for the development team and stakeholders to understand the system's functionalities, constraints, and performance expectations.
+### 1.1 Purpose
+The purpose of this document is to provide a detailed description of the Personal Finance Management System (PFMS). This SRS will outline the system's functionality, performance, and interface requirements.
 
-## 2. Software Fundamentals
+### 1.2 Scope
+The PFMS is designed to help users manage their personal finances. It allows users to track their expenses, incomes, set financial goals, and manage their budgets. The system provides user registration, login, and various financial tracking features.
 
-### Definition of Requirements
-Requirements represent the needs or constraints placed upon a software product.
+### 1.3 Definitions, Acronyms, and Abbreviations
+- **PFMS**: Personal Finance Management System
+- **SRS**: Software Requirements Specification
+- **JWT**: JSON Web Token
+- **API**: Application Programming Interface
+- **UI**: User Interface
 
-### Product and Requirements
-The product refers to the Personal Finance Management System, while requirements define its features, behaviors, and constraints.
+### 1.4 References
+- [GitHub Repository](https://github.com/hardikSinghBehl/personal-finance-management-system)
+- Swagger-UI for API documentation
 
-### Functional and Nonfunctional Requirements
-Functional requirements describe what the system should do, while non-functional requirements specify how the system should perform.
+## 2. Overall Description
 
-### Emergent Properties
-Emergent properties are characteristics of the system that arise from the interaction of its components.
+### 2.1 Product Perspective
+The PFMS is a standalone system that utilizes Java Spring Boot for the backend and PostgreSQL for the database. It employs Spring Security for authentication and authorization using JWT.
 
-### Quantifiable Requirements
-Requirements that can be measured or quantified, such as response time, reliability, and scalability.
+### 2.2 Product Functions
+- User registration and authentication
+- Expense and income tracking
+- Budget management
+- Financial goal setting
+- Monthly spending thresholds
+- Financial notes and tagging system
 
-### System Requirements and Software Requirements
-System requirements define the capabilities and constraints of the entire system, while software requirements specify the behavior and features of the software component.
+### 2.3 User Classes and Characteristics
+- **Registered Users**: Can access all features after logging in.
+- **Guests**: Can only register and login.
 
-## 3. Requirements Process
+### 2.4 Operating Environment
+- **Server**: Java 15, Spring Boot, PostgreSQL
+- **Client**: Any web browser
 
-### Process Models
-Various process models such as Waterfall, Agile, and Spiral can be utilized for requirements elicitation, analysis, and validation.
+### 2.5 Design and Implementation Constraints
+- The application must use Java 15.
+- The database must be PostgreSQL.
+- Authentication must be handled via JWT.
 
-### Process Actors
-Actors involved in the requirements process include stakeholders, developers, testers, and project managers.
+### 2.6 User Documentation
+- Setup and usage instructions are provided in the README file on the GitHub repository.
 
-### Process Support and Management
-Tools and techniques used to support and manage the requirements process, including requirement management software and version control systems.
+## 3. System Features
 
-### Process Quality and Improvement
-Continuous improvement of the requirements process through feedback, reviews, and lessons learned.
+### 3.1 User Registration and Login
+#### 3.1.1 Description
+Users can register by providing their email, password, and other required details. They can log in using their credentials to access the system.
 
-## 4. Requirement Elicitation
+#### 3.1.2 Functional Requirements
+- **FR1**: The system shall allow users to register.
+- **FR2**: The system shall authenticate users via JWT upon login.
 
-### Requirement Sources
-Sources of requirements include stakeholders, domain experts, market research, and existing systems.
+### 3.2 Expense and Income Tracking
+#### 3.2.1 Description
+Users can log their expenses and incomes, categorize them, and view a summary.
 
-### Elicitation Techniques
-Techniques such as interviews, surveys, brainstorming sessions, and use cases can be employed to elicit requirements effectively.
+#### 3.2.2 Functional Requirements
+- **FR3**: The system shall allow users to add, edit, and delete expenses.
+- **FR4**: The system shall allow users to add, edit, and delete incomes.
 
-## 5. Requirement Analysis
+### 3.3 Budget Management
+#### 3.3.1 Description
+Users can set budgets for different categories and track their spending against these budgets.
 
-### Requirement Classification
-Requirements can be classified as functional, non-functional, user, system, and software requirements.
+#### 3.3.2 Functional Requirements
+- **FR5**: The system shall allow users to set and update budgets.
+- **FR6**: The system shall provide a summary of budget vs. actual spending.
 
-### Conceptual Modeling
-Creating models such as use case diagrams, activity diagrams, and class diagrams to understand and represent requirements.
+### 3.4 Financial Goal Setting
+#### 3.4.1 Description
+Users can set financial goals and track their progress.
 
-### Architectural Design and Requirements Allocation
-Allocating requirements to system components and defining the system architecture based on functional and non-functional requirements.
+#### 3.4.2 Functional Requirements
+- **FR7**: The system shall allow users to set financial goals.
+- **FR8**: The system shall track progress towards these goals.
 
-### Requirements Negotiations
-Resolving conflicts and prioritizing requirements through negotiation with stakeholders.
+### 3.5 Monthly Spending Thresholds
+#### 3.5.1 Description
+Users can set monthly spending limits and receive alerts if they exceed them.
 
-### Formal Analysis
-Using formal methods such as formal specification languages and model checking to analyze and validate requirements rigorously.
+#### 3.5.2 Functional Requirements
+- **FR9**: The system shall allow users to set monthly spending thresholds.
+- **FR10**: The system shall automatically calculate and report spending at the end of each month.
 
-## 6. Requirement Specifications
+### 3.6 Financial Notes and Tagging
+#### 3.6.1 Description
+Users can create notes and assign tags for easier tracking and categorization.
 
-### System Definition Document
-A high-level document that defines the purpose, scope, and stakeholders of the system.
+#### 3.6.2 Functional Requirements
+- **FR11**: The system shall allow users to create, edit, and delete financial notes.
+- **FR12**: The system shall allow users to assign tags to expenses, incomes, and notes.
 
-### System Requirement Specification
-Detailed requirements specifying the functionalities, constraints, and interfaces of the system.
+## 4. External Interface Requirements
 
-### Software Requirement Specification
-A detailed document specifying the software component's requirements, including user interface design, database structure, and system behavior.
+### 4.1 User Interfaces
+- **Login Page**
+- **Dashboard**
+- **Expense/Income Entry Forms**
+- **Budget Management Page**
+- **Goal Tracking Page**
+- **Notes and Tagging Page**
 
-## 7. Requirement Validations
+### 4.2 Hardware Interfaces
+No specific hardware interfaces are required.
 
-### Requirements Reviews
-Conducting reviews with stakeholders to ensure that requirements are clear, complete, and consistent.
+### 4.3 Software Interfaces
+- PostgreSQL for database management
+- Java Spring Boot for backend services
+- Swagger-UI for API documentation
 
-### Prototyping
-Building prototypes to demonstrate system functionalities and gather feedback from stakeholders.
+### 4.4 Communication Interfaces
+- HTTPS for secure communication between client and server
 
-### Model Validation
-Validating requirement models through simulation, testing, and analysis.
+## 5. Other Nonfunctional Requirements
 
-### Acceptance Tests
-Performing acceptance tests to verify that the system meets the specified requirements and satisfies stakeholders' needs.
+### 5.1 Performance Requirements
+- The system should handle up to 100 concurrent users.
+- Responses to user actions should be within 2 seconds.
 
-## 8. Practical Considerations
+### 5.2 Safety Requirements
+- Data integrity must be ensured during all CRUD operations.
 
-### Iterative Nature of the Requirements Process
-Recognizing that requirements are subject to change and refining them iteratively throughout the software development lifecycle.
+### 5.3 Security Requirements
+- User data must be secured using JWT for authentication.
+- Passwords must be stored using strong encryption techniques.
 
-### Change Management
-Establishing processes to manage and track changes to requirements effectively.
+### 5.4 Software Quality Attributes
+- **Reliability**: The system should be available 99.9% of the time.
+- **Maintainability**: The codebase should be modular and well-documented.
 
-### Requirements Attributes
-Assigning attributes such as priority, stability, and traceability to requirements to facilitate management and tracking.
-
-### Measuring Requirements
-Defining metrics to measure the quality, completeness, and consistency of requirements.
-
-## 9. Non-Functional Requirements (NFRs)
-
-Non-Functional Requirements specify the criteria that can be used to judge the operation of a system, rather than specific behaviors. 
-
-- **Performance**: The system should respond to user requests within 2 seconds under normal load conditions.
-- **Reliability**: The system should have an uptime of at least 99.9%.
-- **Security**: User data should be encrypted during transmission and storage to prevent unauthorized access.
-- **Usability**: The user interface should be intuitive and user-friendly, with clear navigation and instructions.
-- **Scalability**: The system should be able to handle a minimum of 1000 concurrent users without degradation in performance.
-- **Maintainability**: The system code should be well-documented and modular to facilitate future maintenance and enhancements.
+## 6. Other Requirements
+- Regular backups of the database should be taken to prevent data loss.
+- The system should comply with relevant financial data regulations.
