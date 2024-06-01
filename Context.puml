@@ -1,0 +1,32 @@
+@startuml
+actor User
+
+rectangle "Financial Application" {
+    User --> (Register/Login)
+    User --> (Update Details)
+    User --> (Change Password)
+    User --> (Manage Balance)
+    User --> (Track Expenses/Gains)
+    User --> (Set Financial Goals)
+    User --> (Set Monthly Spending Threshold)
+    User --> (Create Financial Notes)
+    User --> (Assign Tags and Query)
+}
+
+rectangle "External Authentication Service" {
+    (Register/Login) --> (Authentication)
+    (Update Details) --> (Authentication)
+    (Change Password) --> (Authentication)
+}
+
+rectangle "Scheduler" {
+    (Set Monthly Spending Threshold) --> (Spring Scheduler)
+    (Spring Scheduler) --> (Cron Expressions)
+}
+
+rectangle "Email Service" {
+    (Register/Login) --> (Email Verification)
+    (Notification) --> (Email Alerts)
+}
+
+@enduml
