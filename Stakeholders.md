@@ -96,3 +96,13 @@
   - **Technical Challenges**: Solving complex problems efficiently.
   - **Efficient Development Process**: Following best practices for timely delivery.
   - **System Performance**: Building a robust, scalable, and user-friendly system.
+
+### 13. Users
+- **Role**: Individuals who will be using the Personal Finance Management System (PFMS) to manage their finances.
+- **Responsibilities**: Utilize the PFMS to track expenses, set financial goals, manage budgets, and gain insights into their financial health.
+- **Interests**:
+  - **Ease of Use**: Having a user-friendly interface that simplifies financial management tasks.
+  - **Financial Insights**: Accessing clear and comprehensive reports and analytics to make informed decisions.
+  - **Goal Achievement**: Tracking progress towards financial goals and milestones.
+  - **Data Security**: Ensuring their financial information is kept secure and private.
+  - **Customer Support**: Having access to responsive and helpful customer support in case of any issues or questions.
