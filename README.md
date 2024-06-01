@@ -1,4 +1,4 @@
-# Project Name
+# Personal Finance Management System
 
 ## Team Name
 
