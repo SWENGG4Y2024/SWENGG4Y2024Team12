@@ -1,32 +1,34 @@
 @startuml
-actor User
-
-rectangle "Financial Application" {
-    User --> (Register/Login)
-    User --> (Update Details)
-    User --> (Change Password)
-    User --> (Manage Balance)
-    User --> (Track Expenses/Gains)
-    User --> (Set Financial Goals)
-    User --> (Set Monthly Spending Threshold)
-    User --> (Create Financial Notes)
-    User --> (Assign Tags and Query)
+!define RECTANGLE component
+ 
+title System Context Diagram for Personal Finance Management System
+ 
+actor User as user
+ 
+RECTANGLE "Personal Finance Management System" as system {
+  RECTANGLE "Authentication Service" as auth
+  RECTANGLE "Expense Management Service" as expense
+  RECTANGLE "Income Management Service" as income
+  RECTANGLE "Budget Management Service" as budget
+  RECTANGLE "Goal Management Service" as goal
+  RECTANGLE "Notes and Tagging Service" as notes
+  RECTANGLE "PostgreSQL Database" as db
 }
-
-rectangle "External Authentication Service" {
-    (Register/Login) --> (Authentication)
-    (Update Details) --> (Authentication)
-    (Change Password) --> (Authentication)
-}
-
-rectangle "Scheduler" {
-    (Set Monthly Spending Threshold) --> (Spring Scheduler)
-    (Spring Scheduler) --> (Cron Expressions)
-}
-
-rectangle "Email Service" {
-    (Register/Login) --> (Email Verification)
-    (Notification) --> (Email Alerts)
-}
-
+ 
+user --> system : Uses
+ 
+system --> auth : Authentication Requests
+system --> expense : Expense Data
+system --> income : Income Data
+system --> budget : Budget Data
+system --> goal : Goal Data
+system --> notes : Notes Data
+ 
+auth --> db : Read/Write User Data
+expense --> db : Read/Write Expense Data
+income --> db : Read/Write Income Data
+budget --> db : Read/Write Budget Data
+goal --> db : Read/Write Goal Data
+notes --> db : Read/Write Notes Data
 @enduml
+ 
