@@ -1,0 +1,50 @@
+@startuml
+!define RECTANGLE_COLOR LightSkyBlue
+!define BORDER_COLOR RoyalBlue
+
+skinparam rectangle {
+  BackgroundColor RECTANGLE_COLOR
+  BorderColor BORDER_COLOR
+}
+
+actor "User" as User
+
+package "Personal Finance Management System" {
+  package "Cross-Platform App (React Native/Flutter)" as App <<Container>> {
+    rectangle "User Interface" as UI <<Component>> 
+    rectangle "Authentication Module" as Auth <<Component>> 
+  }
+  
+  package "Backend Application (Spring Boot)" as Backend <<Container>> {
+    rectangle "API Gateway" as APIGW <<Component>> 
+    rectangle "User Management Service" as UMS <<Component>> 
+    rectangle "Finance Management Service" as FMS <<Component>> 
+    rectangle "Notification Service" as NS <<Component>> 
+    rectangle "Note Management Service" as NMS <<Component>> 
+    rectangle "Scheduler Service" as SS <<Component>> 
+  }
+  
+  package "Database" as Database <<Container>> {
+    rectangle "User Database" as UDB <<Component>> 
+    rectangle "Finance Database" as FDB <<Component>> 
+    rectangle "Notes Database" as NDB <<Component>> 
+  }
+}
+
+User -[hidden]right-> UI : Interacts with
+UI --> APIGW : API Requests
+Auth --> APIGW : Auth Requests
+
+APIGW --> UMS : Manage Users
+APIGW --> FMS : Track Finances
+APIGW --> NS : Send Notifications
+APIGW --> NMS : Manage Notes
+APIGW --> SS : Schedule Tasks
+
+UMS --> UDB : Stores/Retrieves User Data
+FMS --> FDB : Stores/Retrieves Finance Data
+NS --> UDB : Stores/Retrieves User Data
+NMS --> NDB : Stores/Retrieves Notes Data
+SS --> FDB : Monthly Calculation
+
+@enduml
