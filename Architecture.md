@@ -4,4 +4,4 @@
 
 ## Container Diagram : Personal Finance Management System
 
-![System Context Diagram](systemcontextdiagram.png)
+![System Context Diagram](containerdiagram.png)
