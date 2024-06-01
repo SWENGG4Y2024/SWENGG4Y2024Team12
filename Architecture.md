@@ -1,3 +1,3 @@
-## System Context Diagram
+## System Context Diagram : Personal Finance Management System
 
-![System Context Diagram](System%20Context%20Diagram.png)
+![System Context Diagram](systemcontextdiagram.png)
